@@ -1,0 +1,77 @@
+<section class="content-header">
+    <h1>
+        Expense Books
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/app/#/"><i class="fa fa-dashboard"></i> Home</a>
+        </li>
+        <li>Expense Books</li>
+        <li class="active">Create Expense Book</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <!-- left column -->
+        <div class="col-md-8">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Create New Expense Book</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id="js_create_expense_book_form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input type="title" id='js-title' name="title" class="form-control" id="exampleInputEmail1" placeholder="Enter title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Description</label>
+                            <textarea class="textarea" id='js-description' name="description" placeholder="Describe your expense book. It can be your personal expenses / trip with friends / monthly expenses shared with your friends / business tour etc." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Currency</label>
+                            <select class="form-control" id='js-currency' name="currency">
+                                <option>USD (U.S. Dollar)</option>
+                                <option>INR (Indian Rupee)</option>
+                                <option>EUR (European Euro)</option>
+                                <option>JPY (Japanese Yen)</option>
+                                <option>GBP (British Pound)</option>
+                                <option>CHF (Swiss Franc)</option>
+                                <option>CAD (Canadian Dollar)</option>
+                                <option>AUD/NZD (Australian/New Zealand Dollar)</option>
+                                <option>ZAR (South African Rand)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Add People</label>
+                            <br/>
+                            <label id="js-people-list">
+
+                            </label>
+                            <br/>
+                            <br/>
+                            <label>
+                                <a id="js-add-person">
+                                    <span>+ Add Person</span>
+                                </a>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button id="js-create-expense-book" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
+        <div class="col-md-2">
+        </div>
+    </div>
+    <!-- /.row -->
+</section>

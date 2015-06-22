@@ -1,0 +1,57 @@
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="/app/#/">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="treeview {% if expense_book %}active{% endif %}">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-book"></i> <span>Expense Books</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="{% if create_expense_book %}active{% endif %}">
+                                    <a href="/app/#create_expense_book"><i class="fa fa-angle-double-right"></i>Create new Expense Book</a>
+                                </li>
+                                <li class="{% if all_expense_books %}active{% endif %}">
+                                    <a href="/app/#all_expense_books"><i class="fa fa-angle-double-right"></i>All Expense Books</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview {% if expense %}active{% endif %}">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-credit-card"></i> <span>Expenses</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="{% if add_expense %}active{% endif %}">
+                                    <a href="/app/#add_expense"><i class="fa fa-angle-double-right"></i>Add new Expense</a>
+                                </li>
+                                <li class="{% if all_expenses %}active{% endif %}">
+                                    <a href="/app/#all_expenses"><i class="fa fa-angle-double-right"></i>All Expenses</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview {% if people %}active{% endif %}">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-user"></i> <span>People</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="{% if add_person %}active{% endif %}">
+                                    <a href="/app/#add_person"><i class="fa fa-angle-double-right"></i>Add new Person</a>
+                                </li>
+                                <li class="{% if all_people %}active{% endif %}">
+                                    <a href="/app/#all_people"><i class="fa fa-angle-double-right"></i>All People</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <br/><br/>
+                        <li>
+                            <a href="/logout">
+                                <i class="fa fa-power-off"></i> <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+

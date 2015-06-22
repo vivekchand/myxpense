@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyXpense.co | Expense Tracking Simplified.</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- bootstrap 3.0.2 -->
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="/static/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="skin-blue" id='js-myxpense-app'>
+        
+
+        {% include "common/base_navbar.html" %}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    {% include "common/base_sidebar.html" %}
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side" id='page-content'>
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Dashboard
+                        <small>Control panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/app/#/"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        {% include "myxpense_templates.html" %}
+
+        <!-- add new calendar event modal -->
+        <script src="/static/js/lib/jquery.min.js"></script>
+        <script src="/static/js/lib/underscore-min.js"></script>
+        <script src="/static/js/lib/backbone-min.js"></script>
+        <script src="/static/js/lib/backbone-tastypie.js"></script>
+
+        <script src="/static/js/mvc/views/create_expense_book.js"></script>
+        <script src="/static/js/mvc/models/expense_book.js"></script>
+        <script src="/static/js/mvc/collections/expense_books.js"></script>
+
+        <script src="/static/js/mvc/views/add_expense.js"></script>        
+        <script src="/static/js/mvc/models/expense.js"></script>
+        <script src="/static/js/mvc/collections/expenses.js"></script>
+
+        <script src="/static/js/mvc/views/add_person.js"></script>
+        <script src="/static/js/mvc/models/person.js"></script>
+        <script src="/static/js/mvc/collections/people.js"></script>
+
+        <script src="/static/js/mvc/views/all_people.js"></script>
+        <script src="/static/js/mvc/views/all_expenses.js"></script>
+        <script src="/static/js/mvc/views/all_expense_books.js"></script>
+        <script src="/static/js/mvc/views/add_person_modal.js"></script>
+        <script src="/static/js/mvc/views/dashboard.js"></script>
+
+
+        <script src="/static/js/mvc/router.js"></script>
+
+        <!-- jQuery 2.0.2 -->
+        <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- AdminLTE App -->
+        <script src="/static/js/AdminLTE/app.js" type="text/javascript"></script>
+    </body>
+</html>

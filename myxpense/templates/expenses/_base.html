@@ -1,0 +1,33 @@
+<script id="jst-add-expense" type="text/template">
+    {% include "expenses/add_expense.html" %}
+</script>  
+<script id="jst-expense-row" type="text/template">
+    {% include "expenses/expense_row.html" %}
+</script>        
+<script id="jst-all-expenses" type="text/template">
+    {% include "expenses/all_expenses.html" %}
+</script>  
+<script id="jst-associated-with" type="text/template">
+	<%_.each(expense_books, function(expense_book){%>
+		<option value="<%=expense_book.resource_uri%>"><%=expense_book.title%></option>
+	<%});%>	
+</script>
+<script id='jst-also-paid-by' type="text/template">
+	<div id='js-paid-by-amount'>
+	    <div class="form-group">
+	        <label for="exampleInputEmail1">Paid by</label>
+	        <select id="js-paid-by" name="paid_by" class="form-control">
+			    <%_.each(paid_by, function(person){%>
+			        <option name="paid_by" value="<%= person.resource_uri %>"><%= person.username %>
+			        </option>
+			    <%});%>	        
+	        </select>
+	    </div>
+        <label for="exampleInputEmail1">Amount</label>
+	    <div class="form-group has-error">
+	        <label  id="js-amount-err" class="control-label"><i class="fa fa-times-circle-o"></i> Enter valid amount spent</label>
+	        <input name="amount" type="number" class="form-control" id="js-amount" placeholder="Enter Amount">
+	    </div>
+	    <hr/>
+	</div>
+</script>

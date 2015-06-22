@@ -1,0 +1,5 @@
+* Make sure, the same user cannot be added again
+* Add new Expense form should show data based on what ExpenseBook is chosen & show shared with based on who all paid for that expense
+
+
+* Each expense item / expense book item should be like an inbox item, clicking on it should expand to allow edit & stuff 

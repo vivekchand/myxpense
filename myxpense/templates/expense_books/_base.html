@@ -1,0 +1,40 @@
+{% include "expense_books/add_person_modal.html" %}
+
+<script id="expenseRowTemplate" type="text/template">
+    <ul>
+        <li><%= expense_name %></li>
+        <li><%= expense_type %></li>
+        <li><%= total_amount %></li>
+    </ul>
+</script>     
+<script id="jst-create-expense-book" type="text/template">
+    {% include "expense_books/create_expense_book.html" %}
+</script>        
+<script id="jst-expense-book-row" type="text/template">
+    {% include "expense_books/expense_book_row.html" %}
+</script>
+<script id="jst-all-expense-books" type="text/template">
+    {% include "expense_books/all_expense_books.html" %}
+</script>   
+<script id='jst-people-list' type="text/template">
+	<%_.each(people, function(person){%>
+		<div id="js-person">
+			<input type="checkbox" name="person" value="<%= person.resource_uri %>" checked/>
+			<span><%= person.username %></span>
+			<br/>
+		</div>
+	<%});%>
+</script>
+<script id="jst-paid-by" type="text/template">
+    <%_.each(paid_by, function(person){%>
+        <option name="paid_by" value="<%= person.resource_uri %>"><%= person.username %></option>
+    <%});%>
+</script>
+<script id="jst-shared-with" type="text/template">
+    <%_.each(shared_with, function(person){%>
+        <input type="checkbox" id="js-shared-with" name="shared_with" value="<%= person.resource_uri %>" checked> 
+            <%= person.username %>
+        <br/>
+        </input>
+    <%});%>
+</script>

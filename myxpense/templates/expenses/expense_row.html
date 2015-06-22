@@ -1,0 +1,12 @@
+<td><%= expense_type %></td>
+<td><%= expense_name %></td>            
+<td> 
+<% for( var i=0; i<paid_by_list.length; i++ ) { %>
+	<%= paid_by_list[i].username %> (<%= paid_by_list[i].amount %>)
+<% } %>
+</td>     
+<td>
+<% for(var i=0; i<shared_with.length; i++ ) { %>
+	<%= shared_with[i].username %> <br/>
+<% } %>
+</td>     

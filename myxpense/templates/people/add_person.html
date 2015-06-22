@@ -1,0 +1,69 @@
+<section class="content-header">
+    <h1>
+        People
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/app/#/"><i class="fa fa-dashboard"></i> Home</a>
+        </li>
+        <li>People</li>
+        <li class="active">Add new Person</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <!-- left column -->
+        <div class="col-md-8">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Add new person</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id="js_add_person_form">
+                    <div class="box-body">
+                        {% if not expense_books %}
+                        <div class="alert alert-danger alert-dismissable">
+                            <i class="fa fa-warning"></i>
+                            You will have to create an <a href="/app/#create_expense_book" class="alert-link">Expense Book</a> before adding a person!
+                        </div>
+                        {% endif %}
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                             <label class="control-label" style="display:none;" id="js-name-err" for="inputError2">* This name is already taken.</label>                            
+                            <input type="name" id="js-name" class="form-control" name="name" placeholder="Enter name" {%if not expense_books %}disabled{%endif%}>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" id="js-email" class="form-control" name="email" placeholder="Enter email" {%if not expense_books%}disabled{%endif%}>
+                            <label class="control-label" style="display:none;" id="js-email-err" for="inputError2">* This email is already taken.</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Associated with</label>
+                            <select name="expense_book" id="js-associated-with" class="form-control" {%if not expense_books%}disabled{%endif%}>
+                                {% for expense_book in expense_books %}
+                                <option value="{{expense_book.id}}">{{ expense_book.title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <input style="display:none;" value="true" name="redirect">
+
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="submit" id="js-add-person" data-loading-text="Adding ..." class="btn btn-primary" {%if not expense_books%}disabled{%endif%}>Add Person</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
+        <div class="col-md-2">
+        </div>
+    </div>
+    <!-- /.row -->
+</section>

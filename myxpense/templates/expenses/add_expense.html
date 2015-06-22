@@ -1,0 +1,109 @@
+<section class="content-header">
+    <h1>
+        Expenses
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/app/#/"><i class="fa fa-dashboard"></i> Home</a>
+        </li>
+        <li>Expenses</li>
+        <li class="active">Add new Expense</li>
+    </ol>
+</section>
+<br/>
+<section class "content">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <!-- left column -->
+        <div class="col-md-8">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Add New Expense</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id="js_add_expense_form">
+                    <div class="box-body">
+                        <div class="alert alert-danger alert-dismissable" style="display:none;" id="js-expense-warning">
+                            <i class="fa fa-warning"></i>
+                            You will have to create an <a href="/app/#create_expense_book" class="alert-link">Expense Book</a> before adding a expense!
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input name="name" type="name" id='js-expense-name' class="form-control" id="exampleInputEmail1" placeholder="Expense Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Associated with</label>
+                            <select id="js-associated-with" name="expense_book" class="form-control">
+                                {% for expense_book in expense_books %}
+                                <option value="{{expense_book.id}}">{{ expense_book.title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Expense Type</label>
+                            <select name="expense_type" id='js-expense-type' class="form-control">
+                                <option>Hotel/Motel Expense</option>
+                                <option>Agent Fees</option>
+                                <option>Airfare</option>
+                                <option>Bus</option>
+                                <option>Train</option>
+                                <option>Bag Check Fees</option>
+                                <option>Local Bus/Metro/Subway</option>
+                                <option>Parking</option>
+                                <option>Rental Car</option>
+                                <option>Taxi / Shuttle</option>
+                                <option>Tolls</option>
+                                <option>Fuel</option>
+                                <option>Ticket</option>
+                                <option>Food</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div id="js-paid-by-list">
+                            <div id='js-paid-by-amount'>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Paid by</label>
+
+                                    <select id="js-paid-by" name="paid_by" class="form-control">
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Amount</label>
+                                    <input name="amount" type="number" class="form-control" id="js-amount" placeholder="Enter Amount">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <a id="js-also-paid-by">
+                                    <span>+ Also paid by</span>
+                                </a>
+                            </label>
+                        </div>
+                        <div class="form-group" id="js-shared-with-section">
+                            <label for="exampleInputEmail1">Shared with</label>
+                            <div id="js-shared-with-list">
+                            
+                            <br/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button id="add" type="button" class="btn btn-primary" data-loading-text="Adding ..">Add Expense</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
+        <div class="col-md-2">
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
